@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Calendar</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ie8.css"/><![endif]-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.min.css">
+
+</head>
+<body>
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo container">
+            <div>
+                <h1><a href="../index.html" id="logo">FreshWater Society</a></h1>
+            </div>
+        </div>
+    </header>
+
+     <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="current">
+                <a>Community</a>
+                <ul>
+                    <li><a href="calendar.html">Calendar</a></li>
+                     <li><a href="../Profile/discussionBoard.html">Discussion Board</a></li>
+                     <li><a href="../Reports/newVolunteer.html">New Volunteers</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../Reports/reports.html">Reports</a>
+                <ul>
+                     <li><a href="../Reports/newHours.html">Report Hours</a></li>
+                     <li><a href="../Reports/newReport.html">Export Reports</a></li>
+                 </ul>
+            </li>
+            <li><a href="../Project/project.html">Project</a></li>
+            <li>
+                <a href="../Profile/about.html">About Us</a>
+                <ul>
+                    <li><a href="../Profile/watershed-district.html">Watershed District</a>
+                </ul>    
+            </li>
+            <li><a href="../Profile/profile.html">Profile</a>
+            <ul>
+                    <li><a href="../Profile/profile.html">My Profile</a></li>
+                    <li><a href="../Profile/ProfileList.html">Users List</a></li>
+                
+            </ul>
+            </li>
+            <!-- Beginning of Sign up / Log in -->
+            <li><a href="#" id="loginNav"><div onclick="openNav()">Login/Signup</div></a> <!-- Tab Label -->
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" style="margin-left: 27%; width: 50%; position: relative; text-align:center; "
+                       class="closebtn"
+                       onclick="closeNav()"> Close</a> <!-- closes overlay -->
+                    <div class="overlay-content" >
+                        <!-- Buttons to display the log in and sign up forms -->
+                        <button type="submit" class="btn btn-default" onclick="showLogin()">Log In</button>
+                        <button type="submit" class="btn btn-default" onclick="hideLogin()">Sign Up</button>
+                        <!-- The Login form is the default active form -->
+                        <form id="login" class="login">
+                            <font color="white"></font><br>
+                            <input id="lEmail" type="text" name="usrname" placeholder="Email Address" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            <input type="password" name="passwrd" placeholder="Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                        </form> <!-- End of Login Form -->
+                        <!-- The Sign Up form is secondary and hidden by default -->
+                        <form id="signup" style="visibility:hidden">
+                            <font color="white"></font><br>
+                            <input id="sFirstName" type="text" name="firstName" placeholder="First Name" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            
+                            <input id="sLastName" type="text" name="lastName" placeholder="Last Name" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            
+                            <input id="sEmail" type="email" name="Email" placeholder="Email Address" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            
+                            <input type="password" name="passwrd" placeholder="Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <input type="password" name="passwrd" placeholder="Confirm Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;"><br>
+                            <input  type="text" name="hearAboutFWS" placeholder="How did you hear about FSW?" size="35"
+                                   style="width: 25%; height:3em; text-align: center; margin: 0 auto;">
+                        </form> <!-- End of Sign Up form -->
+                        <br>
+                        <!-- Hitting the submit button will display an alert telling the user that
+                         their info was not saved and an account was not created in order to reduce
+                         the amount of confusion when people test the prototype. It will then close
+                         the overlay and return the page was it previously was. -->
+                        <button type="submit" class="btn btn-default inBack" onclick="accountSubmit()">Submit</button> -->
+                    </div>
+
+                </div>
+            </li> <!-- End of Sign up / Log in -->
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div id="main" class="container">
+            <div class="row">
+                <br>
+                <!-- will force the site to open a new tab/window to route to the Google end -->
+                <button onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+Event+Name&dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+http://www.example.com&location=Waldorf+Astoria,+301+Park+Ave+,+New+York,+NY+10022&sf=true&output=xml','_blank')" target="_blank"  class="customButtons" style="margin-left:50px;">
+                                <a href = "https://www.google.com/calendar/render?action=TEMPLATE&text=Your+Event+Name&dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+http://www.example.com&location=Waldorf+Astoria,+301+Park+Ave+,+New+York,+NY+10022&sf=true&output=xml"  style="text-decoration:none; color: white">Add Event</a>
+                </button>
+                <iframe src="https://calendar.google.com/calendar/embed?height=800&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=5eqqdl9e3o800f23ir5utk9j3g%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FChicago"
+                        style="border-width:0" width="100%" height="800" frameborder="0"
+                        scrolling="no"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="container">
+        <div class="row 200%">
+            <div class="12u">
+
+                <!-- About -->
+                <section>
+                    <h2 class="major"><span>What's this about?</span></h2>
+                    <p>
+                        This is <strong>The Master Water Stewards program</strong>, a program that certifies and
+                        supports community leaders to install pollution
+                        prevention projects that educate community members, reduce pollutants from polluted runoff, and
+                        allow more water to soak into the ground before running into storm sewer systems. Wherever you
+                        live, you can make a real difference in the health of our waters.
+                    </p>
+                </section>
+
+                <!-- Contact -->
+                <section>
+                    <h2 class="major"><span>Get in touch on Social Media</span></h2>
+                    <ul class="contact">
+                        <li><a class="icon fa-facebook" href="https://www.facebook.com/FreshwaterSociety/"><span
+                                class="label">Facebook</span></a>
+                        </li>
+                        <li><a class="icon fa-twitter" href="https://twitter.com/"><span
+                                class="label">Twitter</span></a></li>
+                    </ul>
+                </section>
+                <section><a href="/admin">Admin login</a></section>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/skel.min.js"></script>
+<script src="../assets/js/skel-viewport.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../assets/js/main.js"></script>
+<script src='http://fullcalendar.io/js/fullcalendar-2.1.1/lib/moment.min.js'></script>
+<script src='http://fullcalendar.io/js/fullcalendar-2.1.1/lib/jquery.min.js'></script>
+<script src="http://fullcalendar.io/js/fullcalendar-2.1.1/lib/jquery-ui.custom.min.js"></script>
+<script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
+<script src="/static/js/gcal.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $('#calendar').fullCalendar({
+            googleCalendarApiKey: 'AIzaSyCluP34mpfQlCQ_dVGwveAI1u7ELRMulVI',
+            events: {
+                googleCalendarId: '5eqqdl9e3o800f23ir5utk9j3g@group.calendar.google.com'
+            }
+        });
+    });
+
+</script>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+
+</body>
+</html>

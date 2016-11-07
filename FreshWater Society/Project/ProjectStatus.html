@@ -1,0 +1,673 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Project</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ie8.css"/><![endif]-->
+</head>
+<body>
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo container">
+            <div>
+                <h1><a href="../index.html" id="logo">FreshWater Society</a></h1>
+            </div>
+        </div>
+    </header>
+
+     <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li>
+                <a>Community</a>
+                <ul>
+                    <li><a href="../Calendar/calendar.html">Calendar</a></li>
+                     <li><a href="../Profile/discussionBoard.html">Discussion Board</a></li>
+                     <li><a href="../Reports/newVolunteer.html">New Volunteers</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../Reports/reports.html">Reports</a>
+                <ul>
+                     <li><a href="../Reports/newHours.html">Report Hours</a></li>
+                     <li><a href="../Reports/newReport.html">Export Reports</a></li>
+                 </ul>
+            </li>
+           
+            <li class="current">
+                <a href="project.html">Project</a>
+                <ul>
+                     <li><a href="project.html">Project List</a></li>
+                     <li><a href="maintainProject.html">Maintenance</a></li>
+                 </ul>
+            </li>
+           
+            <li>
+                <a href="../Profile/about.html">About Us</a>
+                <ul>
+                    <li>
+                        <a href="../Profile/watershed-district.html">Watershed District</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../Profile/profile.html">Profile</a>
+            <ul>
+                    <li><a href="../Profile/profile.html">My Profile</a></li>
+                    <li><a href="../Profile/ProfileList.html">Profile List</a></li>
+                    
+                
+            </ul>
+            </li>
+            <!-- Beginning of Sign up / Log in -->
+            <li><a href="#" id="loginNav"><div onclick="openNav()">Login/Signup</div></a> <!-- Tab Label -->
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" style="margin-left: 27%; width: 50%; position: relative; text-align:center; "
+                       class="closebtn"
+                       onclick="closeNav()"> Close</a> <!-- closes overlay -->
+                    <div class="overlay-content" >
+                        <!-- Buttons to display the log in and sign up forms -->
+                        <button type="submit" class="btn btn-default" onclick="showLogin()">Log In</button>
+                        <button type="submit" class="btn btn-default" onclick="hideLogin()">Sign Up</button>
+                        <!-- The Login form is the default active form -->
+                        <form id="login" class="login">
+                            <font color="white"></font><br>
+                            <input id="lEmail" type="text" name="usrname" placeholder="Email Address" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            <input type="password" name="passwrd" placeholder="Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                        </form> <!-- End of Login Form -->
+                        <!-- The Sign Up form is secondary and hidden by default -->
+                        <form id="signup" style="visibility:hidden">
+                            <font color="white"></font><br>
+                            <input id="sFirstName" type="text" name="firstName" placeholder="First Name" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            
+                            <input id="sLastName" type="text" name="lastName" placeholder="Last Name" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            
+                            <input id="sEmail" type="email" name="Email" placeholder="Email Address" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            
+                            <input type="password" name="passwrd" placeholder="Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <input type="password" name="passwrd" placeholder="Confirm Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;"><br>
+                            <input  type="text" name="hearAboutFWS" placeholder="How did you hear about FSW?" size="35"
+                                   style="width: 25%; height:3em; text-align: center; margin: 0 auto;">
+                        </form> <!-- End of Sign Up form -->
+                        <br>
+                        <!-- Hitting the submit button will display an alert telling the user that
+                         their info was not saved and an account was not created in order to reduce
+                         the amount of confusion when people test the prototype. It will then close
+                         the overlay and return the page was it previously was. -->
+                        <button type="submit" class="btn btn-default inBack" onclick="accountSubmit()">Submit</button> -->
+                    </div>
+
+                </div>
+            </li> <!-- End of Sign up / Log in -->
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div id="main" class="container">
+            <div class="row">
+                <div class="12u centerTable">
+                    <div class="content">
+
+                        <!-- Content -->
+
+                        <article class="box page-content">
+                            <div class='col-lg-3'></div>
+                            <form role="form" style="font-weight: bold;">
+                                <div class="form-group">
+                                    <label>ADMIN</label>
+                                    <select name="id_Admin" size="4" multiple>
+                                      <option value="FWS Program Coordinator">FWS Program Coordinator</option>    
+                                      <option value="Program Coordinator">Program Coordinator</option>
+                                      <option value="Program Assistant"selected>Program Assistance</option>
+                                      <option value="Watershed Coordinator">Watershed Coordinator</option>
+                                    </select>
+                                 <!-- <input id="id_assigned_steward" maxlength="300" name="assigned_steward" type="text"/>-->
+
+                                </div>
+                                <br>
+                                
+                               
+                                <div >           
+                                <br>
+                                    <label>Project Category</label>
+                                <select>
+                                  <option value="start">CLICK HERE TO SELECT</option>
+                                  <option value="rainGarden">Rain Garden</option>
+                                  <option value="rainBarrel">Rain Barrel</option>
+                                  <option value="decontamination">Decontamination</option>
+                                  <option value="education">Education</option>
+                                  <option value="other">Other</option>
+                                </select>  
+                                
+                                <br>
+                               </div>
+                               <div class="form-group">
+                                    <label>Project Name</label>
+                                    <input id="id_project_name" maxlength="300" name="project_name" value="Water collection" type="text" />
+
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Project Start Date </label>
+                                    <input id="id_project_startdate" type="date" maxlength="300" name="project_startdate" value="2015-11-25" />
+
+                                </div>             
+                                <br>
+                                <div class="form-group">
+                                    <label>Project End Date</label>
+                                    <input id="id_project_end" maxlength="300" name="project_enddate" type="date" value="2015-12-02" />
+
+                                </div>                 
+                                
+                                <br>
+                                <label>Project Status</label>
+                                 <select>
+                                  <option value="start">CLICK HERE TO SELECT</option>
+                                  <option value="complete">Complete</option>
+                                  <option value="inProgress">In Progress</option>
+                                  <option value="requiresMaintenance">Requires Maintenance</option>  
+                                </select>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Date of Last maintenance</label>
+                                     <input id="id_event_coordinator" maxlength="500" name="event_coordinator"
+                                           type="date" value="07/26/2016"/>      
+                                </div>
+                                <br>
+                                    <div class="form-group">
+                                    <label>Next of maintenance Date</label>
+                                    <input id="id_event_coordinator" maxlength="500" name="event_coordinator"
+                                           type="date" value="mm/dd/yyyy"/>
+                                           
+                                </div>
+                                <br>
+                                <br>
+                                <br><br>
+                            </form>
+                    </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <br>
+        <section class="box features">
+            <h2 class="major"><span>News Feed</span></h2>
+            <div>
+                <div class="row">
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a href="http://www.stthomas.edu" class="image featured"><img
+                                    src="../images/pic01.jpg" alt=""/></a>
+                            <h3><a href="http://www.stthomas.edu">Success!</a></h3>
+                            <p>
+                                This past week we finished a huge rain garden for the city of St. Paul; with
+                                the help of University of St. Thomas Students
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="../images/pic02.jpg" alt=""/></a>
+                            <h3><a>Thank You Volunteers</a></h3>
+                            <p>
+                                This past year we have seen the highest turnout of volunteers to help with
+                                projects, because of this we have been able to complete more work then ever.
+                                Thank you so much for your help!
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="../images/pic03.jpg" alt=""/></a>
+                            <h3><a>Finished the Rain Garden at 2115 Summit ave</a></h3>
+                            <p>
+                                This past weekend we finished constructing a garden at 2115 Summit ave, this
+                                rain garden should eliminate 50 gallons of water runoff this year alone
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="../images/pic04.jpg" alt=""/></a>
+                            <h3><a>Another Watershed District</a></h3>
+                            <p>
+                                We have expanded to yet another watershed district!
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- Footer -->
+<footer id="footer" class="container">
+    <div class="row 200%">
+        <div class="12u">
+
+            <!-- About -->
+            <section>
+                <h2 class="major"><span>What's this about?</span></h2>
+                <p>
+                    This is <strong>The Master Water Stewards program</strong>, a program that certifies and
+                    supports community leaders to install pollution
+                    prevention projects that educate community members, reduce pollutants from polluted
+                    runoff, and
+                    allow more water to soak into the ground before running into storm sewer systems.
+                    Wherever you
+                    live, you can make a real difference in the health of our waters.
+                </p>
+            </section>
+
+            <!-- Contact -->
+            <section>
+                <h2 class="major"><span>Get in touch on Social Media</span></h2>
+                <ul class="contact">
+                    <li><a class="icon fa-facebook" href="https://www.facebook.com/FreshwaterSociety/"><span
+                            class="label">Facebook</span></a>
+                    </li>
+                    <li><a class="icon fa-twitter" href="https://twitter.com/"><span
+                            class="label">Twitter</span></a></li>
+                </ul>
+            </section>
+            <section><a href="/admin">Admin login</a></section>
+        </div>
+    </div>
+
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="//code.jquery.com/jquery-1.12.3.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/skel.min.js"></script>
+<script src="../assets/js/skel-viewport.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../assets/js/main.js"></script>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#project').DataTable();
+    });
+</script>
+
+</body>
+</html><!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Project</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../assets/css/ie8.css"/><![endif]-->
+</head>
+<body>
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo container">
+            <div>
+                <h1><a href="../index.html" id="logo">FreshWater Society</a></h1>
+            </div>
+        </div>
+    </header>
+
+     <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li>
+                <a href="../Profile/watershed-district.html">Watershed District</a>
+                <ul>
+                    <li><a href="../Calendar/calendar.html">Calendar</a></li>
+                     <li><a href="../Profile/discussionBoard.html">Discussion Board</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../Reports/reports.html">Reports</a>
+                <ul>
+                     <li><a href="../Reports/newHours.html">Report Hours</a></li>
+                     <li><a href="../Reports/newReport.html">Generate Reports</a></li>
+                     <li><a href="../Reports/newVolunteer.html">New Volunteers</a></li>
+                 </ul>
+            </li>
+            <li class="current"><a href="project.html">Project</a></li>
+            <li><a href="../Profile/about.html">About Us</a></li>
+            <li><a href="../Profile/profile.html">Profile</a>
+            <ul>
+                    <li><a href="../Profile/profile.html">My Profile</a></li>
+                    <li><a href="../Profile/ProfileList.html">Users List</a></li>
+                    
+                
+            </ul>
+            </li>
+            <!-- Beginning of Sign up / Log in -->
+            <li><a href="#" id="loginNav"><div onclick="openNav()">Login</div></a> <!-- Tab Label -->
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" style="margin-left: 27%; width: 50%; position: relative; text-align:center; "
+                       class="closebtn"
+                       onclick="closeNav()"> Close</a> <!-- closes overlay -->
+                    <div class="overlay-content" >
+                        <!-- Buttons to display the log in and sign up forms -->
+                        <button type="submit" class="btn btn-default" onclick="showLogin()">Log In</button>
+                        <button type="submit" class="btn btn-default" onclick="hideLogin()">Sign Up</button>
+                        <!-- The Login form is the default active form -->
+                        <form id="login" class="login">
+                            <font color="white"></font><br>
+                            <input type="text" name="usrname" placeholder="Email Address" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            <input type="password" name="passwrd" placeholder="Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                        </form> <!-- End of Login Form -->
+                        <!-- The Sign Up form is secondary and hidden by default -->
+                        <form id="signup" style="visibility:hidden">
+                            <font color="white"></font><br>
+                            <input type="text" name="firstName" placeholder="First Name" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            <input type="text" name="lastName" placeholder="Last Name" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            <input type="email" name="Email" placeholder="Email Address" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <font color="white"></font><br>
+                            <input type="password" name="passwrd" placeholder="Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                            <input type="password" name="passwrd" placeholder="Confirm Password" size="35"
+                                   style="width: 25%; text-align: center; margin: 0 auto;">
+                        </form> <!-- End of Sign Up form -->
+                        <br>
+                        <!-- Hitting the submit button will display an alert telling the user that
+                         their info was not saved and an account was not created in order to reduce
+                         the amount of confusion when people test the prototype. It will then close
+                         the overlay and return the page was it previously was. -->
+                        <button type="submit" class="btn btn-default inBack" onclick="accountSubmit()">Submit</button> -->
+                    </div>
+
+                </div>
+            </li> <!-- End of Sign up / Log in -->
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div id="main" class="container">
+            <div class="row">
+                <div class="12u centerTable">
+                    <div class="content">
+
+                        <!-- Content -->
+
+                        <article class="box page-content">
+                            <div class='col-lg-3'></div>
+                            <form role="form" style="font-weight: bold;">
+                                <div class="form-group">
+                                    <label>ADMIN</label>
+                                    <input id="id_Admin" maxlength="300" name="Admin" type="text"/>
+                                    <select name="Admin" size="4" multiple>
+                                      <option value="Program Coordinator">Program Coordinator</option>    
+                                      <option value="Program Assistant" selected>Program Assistant</option>
+                                      <option value="FWS program Coordinator">FWS Program coordinator</option>
+                                      <option value="Watershed Coordinator ">Watershed</option>
+                                    </select>
+                             
+                                </div>
+                                <br>
+                                       
+                                <br>
+                                    <label>Project Category</label>
+                                      <select name="category">
+                                      <option value=""></option>    
+                                      <option value="rainBarrel">Rain Barrel</option>
+                                      <option value="waterGarden">Water Garden</option>
+                                      <option value="decontamination">Decontamination</option>
+                                      <option value="other">Other</option>
+                                    </select>     
+                                
+                                <br>
+                             
+                                <br>
+                                <div class="form-group">
+                                    <label>Project Start Date </label>
+                                    <input id="id_project_startdate" type="date" maxlength="300" name="project_startdate" value="2015-11-25" />
+
+                                </div>             
+                                <br>
+                                <div class="form-group">
+                                    <label>Project End Date</label>
+                                    <input id="id_project_end" maxlength="300" name="project_enddate" type="date" value="2015-12-02" />
+
+                                </div>                    
+                              
+                                <br>
+                                <label>Project Status</label>
+                                      <select name="Status">
+                                      <option value=""></option>    
+                                      <option value="Project Completed">Project Completed</option>
+                                      <option value="Current Project" selected>Current project</option>
+                                      <option value="other">Other</option>
+                                    </select> 
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Date of Last maintenance</label>
+                                    <input id="id_event_coordinator" maxlength="500" name="event_coordinator"
+                                           type="text"/>
+                                           
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Date of next maintenance</label>
+                                    <input id="id_event_coordinator" maxlength="500" name="event_coordinator"
+                                           type="text"/>
+                                       
+                                </div>
+                                <br>
+                                <br>
+                                <br><br>
+                            </form>
+                    </div>
+                    </article>
+            </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <section class="box features">
+            <h2 class="major"><span>News Feed</span></h2>
+            <div>
+                <div class="row">
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a href="http://www.stthomas.edu" class="image featured"><img
+                                    src="../images/pic01.jpg" alt=""/></a>
+                            <h3><a href="http://www.stthomas.edu">Success!</a></h3>
+                            <p>
+                                This past week we finished a huge rain garden for the city of St. Paul; with
+                                the help of University of St. Thomas Students
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="../images/pic02.jpg" alt=""/></a>
+                            <h3><a>Thank You Volunteers</a></h3>
+                            <p>
+                                This past year we have seen the highest turnout of volunteers to help with
+                                projects, because of this we have been able to complete more work than ever.
+                                Thank you so much for your help!
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="../images/pic03.jpg" alt=""/></a>
+                            <h3><a>Finished the Rain Garden at 2115 Summit ave</a></h3>
+                            <p>
+                                This past weekend we finished constructing a garden at 2115 Summit ave, this
+                                rain garden should eliminate 50 gallons of water runoff this year alone
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <!-- Feature -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="../images/pic04.jpg" alt=""/></a>
+                            <h3><a>Another Watershed District</a></h3>
+                            <p>
+                                We have expanded to yet another watershed district!
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- Footer -->
+<footer id="footer" class="container">
+    <div class="row 200%">
+        <div class="12u">
+
+            <!-- About -->
+            <section>
+                <h2 class="major"><span>What's this about?</span></h2>
+                <p>
+                    This is <strong>The Master Water Stewards program</strong>, a program that certifies and
+                    supports community leaders to install pollution
+                    prevention projects that educate community members, reduce pollutants from polluted
+                    runoff, and
+                    allow more water to soak into the ground before running into storm sewer systems.
+                    Wherever you
+                    live, you can make a real difference in the health of our waters.
+                </p>
+            </section>
+
+            <!-- Contact -->
+            <section>
+                <h2 class="major"><span>Get in touch on Social Media</span></h2>
+                <ul class="contact">
+                    <li><a class="icon fa-facebook" href="https://www.facebook.com/FreshwaterSociety/"><span
+                            class="label">Facebook</span></a>
+                    </li>
+                    <li><a class="icon fa-twitter" href="https://twitter.com/"><span
+                            class="label">Twitter</span></a></li>
+                </ul>
+            </section>
+            <section><a href="/admin">Admin login</a></section>
+        </div>
+    </div>
+
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="//code.jquery.com/jquery-1.12.3.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/skel.min.js"></script>
+<script src="../assets/js/skel-viewport.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../assets/js/main.js"></script>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#project').DataTable();
+    });
+</script>
+
+</body>
+</html>
